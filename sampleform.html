@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="" method="get" class="main-form">
+        <label for="name">Name:<input type="text" id="name" name="name" required></label>
+        <label for="email">Email:<input type="email" id="email" name="email" required></label>
+        <label for="father">Father's Name:<input type="text" id="father" name="father" required></label>
+        <label for="address">Address:<input type="text" id="address" name="address" required></label>
+        <label for="state">State:<select name="state" id="state">
+            <option value="as">Assam</option>
+            <option value="bi">Bihar</option>
+            <option value="up">Uttar Pradesh</option>
+        </select>
+        </label>
+        <label for="phn">Phone Number:<input type="tel" id="phn" name="phn" required maxlength="10"></label>
+        <label for="gender">Gender:
+            <label for="male"><input type="radio" id="male" name="gender" value="male" required checked>Male</label>
+            <label for="female"><input type="radio" id="female" name="gender" value="female" required>Female</label>
+        </label>
+        <label for="DOB">Date of birth:<input type="date" id="DOB" name="DOB" required></label>
+        <label for="selfintro">Self Introduction:
+            <textarea name="selfintro" id="selfintro" required maxlength="250"></textarea>
+        </label>
+        <label for="tos">Terms of Service: <br>
+            <label for="tos"><input type="checkbox" id="tos" name="tos" required>I agree to the terms and conditions</label>
+        </label>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+</body>
+</html>

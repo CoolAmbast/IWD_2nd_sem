@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js"></script>
+</head>
+<body onload="setFocus()">
+    <h1 class="title">Calculator</h1>
+    <table class="calculator-table">
+        <tr>
+            <td colspan="2" class="label-cell">Enter first number</td>
+            <td colspan="2" class="input-cell"><input type="text" id="txtFN" class="input-field"></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="label-cell">Enter second number</td>
+            <td colspan="2" class="input-cell"><input type="text" id="txtSN" class="input-field"></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="label-cell">Result</td>
+            <td colspan="2" class="input-cell"><input type="text" id="txtRes" readonly class="input-field result-field"></td>
+        </tr>
+        <tr>
+            <td class="button-cell"><input type="button" value="+" onclick="add()" class="btn btn-add"></td>
+            <td class="button-cell"><input type="button" value="-" onclick="minus()" class="btn btn-subtract"></td>
+            <td class="button-cell"><input type="button" value="x" onclick="multiply()" class="btn btn-multiply"></td>
+            <td class="button-cell"><input type="button" value="/" onclick="divide()" class="btn btn-divide"></td>
+            <td class="button-cell"><input type="button" value="Reset" onclick="clr()" class="btn btn-reset"></td>
+        </tr>
+    </table>
+    <p id="pmsg" class="message">
+
+    </p>
+</body>
+</html>

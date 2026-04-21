@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+
+.title {
+    text-align: center;
+    color: #353535;
+}
+
+.calculator-table {
+    margin: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.label-cell {
+    padding: 10px;
+    text-align: right;
+}
+
+.input-cell {
+    padding: 10px;
+}
+
+.button-cell {
+    padding: 10px;
+}
+
+.input-field {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.result-field {
+    background-color: #eee;
+}
+
+.btn {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-add {
+    background-color: #4CAF50;
+}
+
+.btn-subtract {
+    background-color: #f44336;
+}
+
+.btn-multiply {
+    background-color: #2196F3;
+}
+
+.btn-divide {
+    background-color: #FF9800;
+}
+
+.btn-reset {
+    background-color: #9E9E9E;
+}
+
+.message {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+}

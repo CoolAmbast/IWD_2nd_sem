@@ -18,6 +18,7 @@ function clr()
     txtFN.value="";
     txtSN.value="";
     txtRes.value="";
+    pmsg.innerHTML=""; 
     txtFN.focus();
 }
 
@@ -67,12 +68,3 @@ function divide(){
     
     txtRes.value = Number(txtFN.value) / num2;
 }
-
-
-
-
-
-
-
-
-

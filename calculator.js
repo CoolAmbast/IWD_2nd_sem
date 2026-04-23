@@ -8,20 +8,6 @@ function setFocus(){
     txtFN.focus();
 }
 
-function clrmsg()
-{
-    pmsg.innerHTML="";
-}
-
-function clr() 
-{   
-    txtFN.value="";
-    txtSN.value="";
-    txtRes.value="";
-    pmsg.innerHTML=""; 
-    txtFN.focus();
-}
-
 function validateInputs() {
 
     if (txtFN.value === "" || isNaN(txtFN.value)) {
@@ -38,33 +24,52 @@ function validateInputs() {
     return true;
 }
 
-function add(){
-    if (!validateInputs()) return;
-
-    txtRes.value = Number(txtFN.value) + Number(txtSN.value);
-}
-
-function minus(){
-    if (!validateInputs()) return;
-    
-    txtRes.value = Number(txtFN.value) - Number(txtSN.value);
-}
-
-function multiply(){
-    if (!validateInputs()) return;
-
-    txtRes.value = Number(txtFN.value) * Number(txtSN.value);
-}
-
-function divide(){
-    if (!validateInputs()) return;
-    
-    var num2 = Number(txtSN.value);
-    if (num2 === 0) {
-        pmsg.innerHTML = "Cannot divide by zero";
-        txtSN.focus();
+function calculate([op]){
+    if (!validateInputs()) {
+        txtRes.value = "";
         return;
     }
-    
-    txtRes.value = Number(txtFN.value) / num2;
+
+    let num1 = Number(txtFN.value);
+    let num2 = Number(txtSN.value);
+
+    switch(op) {
+        case "+":
+            txtRes.value = num1 + num2;
+            break;
+        case "-":
+            txtRes.value = num1 - num2;
+            break;
+        case "*":
+            txtRes.value = num1 * num2;
+            break;
+        case "/":
+            if (num2 === 0) {
+                pmsg.innerHTML = "Cannot divide by zero";
+                txtSN.focus();
+                txtRes.value = "";
+                return;
+            }
+            txtRes.value = num1 / num2;
+            break;
+        default:
+            pmsg.innerHTML = "Invalid operation";
+            txtRes.value = "";
+            return;
+    }
+    pmsg.innerHTML = "";
+}
+
+function clrmsg()
+{
+    pmsg.innerHTML="";
+}
+
+function clr() 
+{   
+    txtFN.value="";
+    txtSN.value="";
+    txtRes.value="";
+    pmsg.innerHTML=""; 
+    txtFN.focus();
 }

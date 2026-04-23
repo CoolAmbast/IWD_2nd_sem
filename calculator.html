@@ -23,10 +23,10 @@
             <td colspan="2" class="input-cell"><input type="text" id="txtRes" readonly class="input-field result-field"></td>
         </tr>
         <tr>
-            <td class="button-cell"><input type="button" value="+" onclick="add()" class="btn btn-add"></td>
-            <td class="button-cell"><input type="button" value="-" onclick="minus()" class="btn btn-subtract"></td>
-            <td class="button-cell"><input type="button" value="x" onclick="multiply()" class="btn btn-multiply"></td>
-            <td class="button-cell"><input type="button" value="/" onclick="divide()" class="btn btn-divide"></td>
+            <td class="button-cell"><input type="button" value="+" onclick="calculate('+')" class="btn btn-add"></td>
+            <td class="button-cell"><input type="button" value="-" onclick="calculate('-')" class="btn btn-subtract"></td>
+            <td class="button-cell"><input type="button" value="x" onclick="calculate('*')" class="btn btn-multiply"></td>
+            <td class="button-cell"><input type="button" value="/" onclick="calculate('/')" class="btn btn-divide"></td>
             <td class="button-cell"><input type="button" value="Reset" onclick="clr()" class="btn btn-reset"></td>
         </tr>
     </table>

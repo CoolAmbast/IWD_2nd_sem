@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <script>
+    function updateLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                document.querySelector('#location').textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                //bigdatacloud api
+                fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('#state').textContent = data.principalSubdivision;
+                    document.querySelector('#country').textContent = data.countryName;
+                }).catch(error => {
+                    console.error('Error fetching location data:', error);
+                });
+            });
+        } else {
+            document.querySelector('#location').textContent = "Geolocation is not supported by this browser.";
+        }
+    }
+    updateLocation();
+    </script>
+</head>
+<body>
+    <h1 align="center">Geolocation</h1>
+    <h2 align="center">
+        you current location is:<br>
+        <p id="location"></p><br>
+        state: <span id="state"></span><br>
+        country: <span id="country"></span>
+    </h2>
+</body>
+</html>

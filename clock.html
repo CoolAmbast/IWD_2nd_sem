@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <script>
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours());
+        const minutes = String(now.getMinutes());
+        const seconds = String(now.getSeconds())
+        const milliseconds = String(now.getMilliseconds());
+        document.querySelector('#clock-dial').textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+        document.querySelector('#date-dial').textContent = now.toDateString();
+    }
+    setInterval(updateClock, 100);
+    </script>
+</head>
+<body>
+    <h1 align="center">24-Hour Clock</h1>
+    <h1 align="center" id="clock-dial"></h1>
+    <h2 align="center" id="date-dial"></h2>
+</body>
+</html>

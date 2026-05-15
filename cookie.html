@@ -12,35 +12,28 @@
             var expTime = "expires=" + d.toUTCString();
 
             if (cdata.length == 0) {
-                alert("Welcome, You are first time visitor");
+                alert("Welcome! You are a first time visitor.");
                 document.cookie = "user=admin,pwd=demo,college=vvit;expTime";
-            } 
+            }
             else {
-                var eq, comma;
-                eq = cdata.indexOf("=");       
-                var rawdata = cdata.substr(eq + 1);
+                var eq, comma, comma2, rawdata, uname, pwd, college, rest;
+                eq = cdata.indexOf("=");
+                rawdata = cdata.substr(eq + 1);
                 comma = rawdata.indexOf(",");
-                alert(eq + "," + comma);
-
-                if (eq == -1) {
-                    alert("Invalid Cookie format");
-                    return;
-                }
-                var uname = rawdata.substr(0, comma);
+                uname = rawdata.substr(0, comma);
                 uname = uname.substr(uname.indexOf("=") + 1);
-                var rest = rawdata.substr(comma + 1);
-                var comma2 = rest.indexOf(",");
-                var pwd = rest.substr(0, comma2);
+                rest = rawdata.substr(comma + 1);
+                comma2 = rest.indexOf(",");
+                pwd = rest.substr(0, comma2);
                 pwd = pwd.substr(pwd.indexOf("=") + 1);
-                var college = rest.substr(comma2 + 1);
+                college = rest.substr(comma2 + 1);
                 college = college.substr(college.indexOf("=") + 1);
-
-                alert("Welcome back, " + uname.toUpperCase() + 
-                      "\nYour Password is: " + pwd + 
-                      "\nCollege is: " + college.toUpperCase());
+                alert("Welcome back, " + uname +
+                    "\nYour Password is: " + pwd +
+                    "\nCollege is: " + college);
             }
         }
-        </script>
+    </script>
 </head>
 <body onload="checkCookie()">
     <h1>Test</h1>

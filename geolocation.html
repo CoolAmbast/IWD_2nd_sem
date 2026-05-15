@@ -15,6 +15,7 @@
                 fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
                 .then(response => response.json())
                 .then(data => {
+                    document.querySelector('#city').textContent = data.city;
                     document.querySelector('#state').textContent = data.principalSubdivision;
                     document.querySelector('#country').textContent = data.countryName;
                 }).catch(error => {
@@ -33,6 +34,7 @@
     <h2 align="center">
         you current location is:<br>
         <p id="location"></p><br>
+        city: <span id="city"></span><br>
         state: <span id="state"></span><br>
         country: <span id="country"></span>
     </h2>
